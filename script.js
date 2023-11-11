@@ -32,3 +32,9 @@ units.forEach(function(i) {
         i.style.backgroundColor = "pink";
     })
 })
+
+units.forEach(function(i) {
+    i.addEventListener('mouseout', () => {
+        i.style.backgroundColor = "";
+    })
+})
