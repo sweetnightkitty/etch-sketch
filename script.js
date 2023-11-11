@@ -33,8 +33,3 @@ units.forEach(function(i) {
     })
 })
 
-units.forEach(function(i) {
-    i.addEventListener('mouseout', () => {
-        i.style.backgroundColor = "";
-    })
-})
