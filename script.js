@@ -6,7 +6,7 @@ function makeRow() {
     const row = document.createElement("div");
     row.classList.add("row");
 
-    for (i = 0; i < dimensions; i++) {
+    for (let i = 0; i < dimensions; i++) {
         const unit = document.createElement("div");
         unit.classList.add("unit");
 
@@ -17,11 +17,10 @@ function makeRow() {
 }
 
 function appendRow() {
-
-    for (i = 0; i < dimensions; i++) {
+    for (let i = 0; i < dimensions; i++) {
         const row = makeRow();
         container.appendChild(row);
-    }
+    };
 }
 
 appendRow();
