@@ -24,3 +24,11 @@ function appendRow() {
 }
 
 appendRow();
+
+const units = document.querySelectorAll(".unit");
+
+units.forEach(function(i) {
+    i.addEventListener('mouseover', () => {
+        i.style.backgroundColor = "pink";
+    })
+})
