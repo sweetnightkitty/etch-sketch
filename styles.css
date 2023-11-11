@@ -15,6 +15,7 @@ body {
     background-color: blue;
     display: flex;
     justify-content: stretch;
+    border: 1px solid black;
 }
 
 .row {
