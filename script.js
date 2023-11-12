@@ -1,5 +1,13 @@
 const dimensions = 16;
 const container = document.querySelector(".container");
+const reset = document.querySelector(".btn-reset");
+const eraser = document.querySelector("btn-eraser");
+const color = document.querySelector("btn-color");
+
+appendRow();
+
+//.units does not exist in DOM until AFTER appendRow() is called.
+const units = document.querySelectorAll(".unit");
 
 
 function makeRow() {
@@ -23,16 +31,11 @@ function appendRow() {
     };
 }
 
-appendRow();
-
-const units = document.querySelectorAll(".unit");
 units.forEach(function(i) {
     i.addEventListener('mouseover', () => {
         i.style.backgroundColor = "#ff981a";
     })
 })
-
-const reset = document.querySelector(".btn-reset");
 
 reset.addEventListener('click', () => {
     const units = document.querySelectorAll(".unit");
@@ -40,4 +43,13 @@ reset.addEventListener('click', () => {
         i.style.backgroundColor = "";
     })
 })
+
+eraser.addEventListener('click', () => {
+    //eraser unit by unit
+})
+
+color.addEventListener('click', () => {
+    //change units color
+})
+
 
