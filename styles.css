@@ -7,7 +7,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image: url(/images/sunflower-background.jpg);
+    background-image: url("./images/sunflower-background.jpg");
     background-size: cover;
     background-attachment: fixed;
 }
