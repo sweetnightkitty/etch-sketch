@@ -26,10 +26,18 @@ function appendRow() {
 appendRow();
 
 const units = document.querySelectorAll(".unit");
-
 units.forEach(function(i) {
     i.addEventListener('mouseover', () => {
         i.style.backgroundColor = "#ff981a";
+    })
+})
+
+const eraser = document.querySelector(".btn-eraser");
+
+eraser.addEventListener('click', () => {
+    const units = document.querySelectorAll(".unit");
+    units.forEach(function(i) {
+        i.style.backgroundColor = "";
     })
 })
 
