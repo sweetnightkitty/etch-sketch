@@ -32,9 +32,9 @@ units.forEach(function(i) {
     })
 })
 
-const eraser = document.querySelector(".btn-eraser");
+const reset = document.querySelector(".btn-reset");
 
-eraser.addEventListener('click', () => {
+reset.addEventListener('click', () => {
     const units = document.querySelectorAll(".unit");
     units.forEach(function(i) {
         i.style.backgroundColor = "";
