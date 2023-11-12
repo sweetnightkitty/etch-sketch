@@ -15,19 +15,23 @@ header {
     align-items: center;
 }
 
+h1 {
+    font-size: 40px;
+}
 
 
 .content {
-    flex: 1;
     display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px 50px 0px;
     justify-content: center;
     align-items: center;
 }
 
 .container {
-    height: 500px;
-    width: 500px;
-    background-color: blue;
+    height: 450px;
+    width: 450px;
     display: flex;
     justify-content: stretch;
     border: 1px solid black;
@@ -46,10 +50,53 @@ header {
 }
 
 footer {
-    background-color: rgb(213, 213, 213);
+    font-size: 20px;
+    padding: 10px;
+    margin-top: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 8px;
-    font-size: 12px;
 }
+
+a {
+    color: inherit;
+    display: flex;
+    align-items: center;
+}
+
+
+.github-logo {
+    padding: 0 8px;
+    height: 25px;
+}
+
+.buttons {
+    display: flex;
+    color: white;
+    gap: 30px;
+    align-items: center;
+}
+
+.btn {
+    padding: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: pink;
+    border: 1px solid black;
+    color: white;
+
+}
+
+.slider {
+    accent-color: pink;
+}
+
+
+
+
+
+
+
+
+
+
