@@ -1,11 +1,12 @@
-const dimensions = 16;
+let dimensions = 16;
 const container = document.querySelector(".container");
 const reset = document.querySelector(".btn-reset");
 const eraser = document.querySelector("btn-eraser");
 const color = document.querySelector("btn-color");
 
-const sizeSlider = document.querySelector("size-slider");
-const sizeValue = document.querySelector("size-value");
+const sizeValue = document.querySelector(".size-value");
+const sizeSlider = document.querySelector("input");
+
 
 appendRow();
 
@@ -34,11 +35,17 @@ function appendRow() {
     };
 }
 
+
+
+
 units.forEach(function(i) {
     i.addEventListener('mouseover', () => {
         i.style.backgroundColor = "#ff981a";
     })
 })
+
+
+
 
 reset.addEventListener('click', () => {
     const units = document.querySelectorAll(".unit");
@@ -46,13 +53,18 @@ reset.addEventListener('click', () => {
         i.style.backgroundColor = "";
     })
 })
-
+/*
 eraser.addEventListener('click', () => {
     //eraser unit by unit
 })
 
 color.addEventListener('click', () => {
     //change units color
+})
+*/
+sizeSlider.addEventListener('input', () => {
+    let inputValue = document.querySelector("input").value;
+    sizeValue.textContent = `${inputValue} x ${inputValue}`;
 })
 
 
