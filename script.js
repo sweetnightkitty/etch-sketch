@@ -1,20 +1,20 @@
+const ORANGE = "#ff981a";
 let dimensions = 16;
 let units;
+
 const container = document.querySelector(".container");
 const reset = document.querySelector(".btn-reset");
 const eraser = document.querySelector("btn-eraser");
 const color = document.querySelector("btn-color");
 
-const sizeValue = document.querySelector(".size-value");
-const sizeSlider = document.querySelector("input");
+const sliderValue = document.querySelector(".size-value");
+const slider = document.querySelector("input");
+
+
 
 
 appendRow();
-
-//.units does not exist in DOM until AFTER appendRow() is called.
-
-
-
+units.forEach((unit) => changeColor(unit, ORANGE));
 
 function makeRow() {
     const row = document.createElement("div");
@@ -39,23 +39,19 @@ function appendRow() {
 }
 
 
-units.forEach((unit) => changeColor(unit));
-
-
 
 reset.addEventListener('click', resetColor);
 
-
-
-sizeSlider.addEventListener('input', () => {
+slider.addEventListener('input', () => {
     resetColor();
     getDimensions();
-    sizeValue.textContent = `${dimensions} x ${dimensions}`;
+    sliderValue.textContent = `${dimensions} x ${dimensions}`;
     emptyGame();
     appendRow();
-    units.forEach((unit) => changeColor(unit));
-
+    units.forEach((unit) => changeColor(unit, ORANGE));
 })
+
+eraser.addEventListener('click', )
 
 
 function resetColor() {
@@ -65,9 +61,9 @@ function resetColor() {
     })
 }
 
-function changeColor(unit) {
+function changeColor(unit, color) {
     unit.addEventListener('mouseover', () => {
-        unit.style.backgroundColor = "#ff981a";
+        unit.style.backgroundColor = color;
     })
 }
 
