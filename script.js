@@ -11,7 +11,7 @@ const color = document.querySelector(".btn-color");
 const rainbow = document.querySelector(".btn-rainbow");
 
 const sliderValue = document.querySelector(".size-value");
-const slider = document.querySelector("input");
+const slider = document.querySelector(".size-slider");
 
 appendRow();
 
@@ -73,7 +73,7 @@ function resetColor() {
 }
 
 function getDimensions() {
-     let inputValue = document.querySelector("input").value;
+     let inputValue = document.querySelector(".size-slider").value;
      dimensions = inputValue;
 }
 
