@@ -47,12 +47,7 @@ units.forEach(function(i) {
 
 
 
-reset.addEventListener('click', () => {
-    const units = document.querySelectorAll(".unit");
-    units.forEach(function(i) {
-        i.style.backgroundColor = "";
-    })
-})
+reset.addEventListener('click', resetGame);
 /*
 eraser.addEventListener('click', () => {
     //eraser unit by unit
@@ -65,6 +60,15 @@ color.addEventListener('click', () => {
 sizeSlider.addEventListener('input', () => {
     let inputValue = document.querySelector("input").value;
     sizeValue.textContent = `${inputValue} x ${inputValue}`;
+    dimensions = inputValue;
+    appendRow();
 })
 
+
+function resetGame() {
+    const units = document.querySelectorAll(".unit");
+    units.forEach(function(i) {
+        i.style.backgroundColor = "";
+    })
+}
 
