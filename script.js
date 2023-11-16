@@ -13,6 +13,8 @@ const rainbow = document.querySelector(".btn-rainbow");
 const sliderValue = document.querySelector(".size-value");
 const slider = document.querySelector(".size-slider");
 
+const colorPicker = document.querySelector(".color-picker");
+
 appendRow();
 
 
@@ -37,6 +39,12 @@ color.addEventListener('click', () => {
     currentColor = ORANGE;
 })
 
+colorPicker.addEventListener('input', () => {
+    rainbowMode = false;
+   const pickedColor = colorPicker.value;
+   currentColor = pickedColor;
+   changeColor();
+})
 
 rainbow.addEventListener('click', () => {
     rainbowMode = true;
@@ -68,7 +76,7 @@ function appendRow() {
 function resetColor() {
     let units = document.querySelectorAll(".unit");
     units.forEach(function(i) {
-        i.style.backgroundColor = "";
+        i.style.backgroundColor = GREEN;
     })
 }
 
