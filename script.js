@@ -24,7 +24,6 @@ slider.addEventListener('input', () => {
     getDimensions();
     sliderValue.textContent = `${dimensions} x ${dimensions}`;
     emptyGame();
-    currentColor = ORANGE;
     appendRow();
 })
 
