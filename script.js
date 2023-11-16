@@ -1,19 +1,43 @@
 const ORANGE = "#ff981a";
+const GREEN = "#dce1c3";
 let dimensions = 16;
-let units;
+let currentColor = ORANGE;
 
 const container = document.querySelector(".container");
 const reset = document.querySelector(".btn-reset");
-const eraser = document.querySelector("btn-eraser");
-const color = document.querySelector("btn-color");
+const eraser = document.querySelector(".btn-eraser");
+const color = document.querySelector(".btn-color");
 
 const sliderValue = document.querySelector(".size-value");
 const slider = document.querySelector("input");
 
-
-
 appendRow();
-units.forEach((unit) => changeColor(unit, ORANGE));
+
+
+
+
+
+
+reset.addEventListener('click', resetColor);
+
+slider.addEventListener('input', () => {
+    resetColor();
+    getDimensions();
+    sliderValue.textContent = `${dimensions} x ${dimensions}`;
+    emptyGame();
+    currentColor = ORANGE;
+    appendRow();
+})
+
+eraser.addEventListener('click', () => {
+    currentColor = GREEN;
+} );
+
+color.addEventListener('click', () => {
+    currentColor = ORANGE;
+})
+
+
 
 function makeRow() {
     const row = document.createElement("div");
@@ -22,7 +46,8 @@ function makeRow() {
     for (let i = 0; i < dimensions; i++) {
         const unit = document.createElement("div");
         unit.classList.add("unit");
-
+        unit.addEventListener('mouseover', changeColor)
+        unit.addEventListener('mousedown', changeColor)
         row.appendChild(unit);
     }
 
@@ -34,36 +59,19 @@ function appendRow() {
         const row = makeRow();
         container.appendChild(row);
     };
-    units = document.querySelectorAll(".unit");
 }
 
 
 
-reset.addEventListener('click', resetColor);
-
-slider.addEventListener('input', () => {
-    resetColor();
-    getDimensions();
-    sliderValue.textContent = `${dimensions} x ${dimensions}`;
-    emptyGame();
-    appendRow();
-    units.forEach((unit) => changeColor(unit, ORANGE));
-})
-
-
 
 function resetColor() {
-    const units = document.querySelectorAll(".unit");
+    let units = document.querySelectorAll(".unit");
     units.forEach(function(i) {
         i.style.backgroundColor = "";
     })
 }
 
-function changeColor(unit, color) {
-    unit.addEventListener('mousedown', () => {
-        unit.style.backgroundColor = color;
-    })
-}
+
 
 function getDimensions() {
      let inputValue = document.querySelector("input").value;
@@ -72,4 +80,26 @@ function getDimensions() {
 
 function emptyGame() {
     container.innerHTML = "";
+}
+
+
+
+
+
+
+
+let mouseDown = false;
+document.body.addEventListener('mousedown', () => {
+    mouseDown = true;
+})
+document.body.addEventListener('mouseup', () => {
+    mouseDown = false;
+})
+
+
+function changeColor(e) {
+    if (e.type === 'mouseover' && !mouseDown) return
+    else {
+        e.target.style.backgroundColor = currentColor;
+    }
 }
