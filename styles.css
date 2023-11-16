@@ -96,11 +96,14 @@ a:hover {
     background-color: #414a2b;
 }
 
-.slider {
+.size-slider {
     accent-color: #84965c;
 }
 
-
+.size-value {
+    color: #414a2b;
+    text-align: center;
+}
 
 
 
