@@ -12,7 +12,6 @@ const slider = document.querySelector("input");
 
 
 
-
 appendRow();
 units.forEach((unit) => changeColor(unit, ORANGE));
 
@@ -51,7 +50,6 @@ slider.addEventListener('input', () => {
     units.forEach((unit) => changeColor(unit, ORANGE));
 })
 
-eraser.addEventListener('click', )
 
 
 function resetColor() {
@@ -62,7 +60,7 @@ function resetColor() {
 }
 
 function changeColor(unit, color) {
-    unit.addEventListener('mouseover', () => {
+    unit.addEventListener('mousedown', () => {
         unit.style.backgroundColor = color;
     })
 }
