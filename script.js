@@ -4,6 +4,9 @@ const reset = document.querySelector(".btn-reset");
 const eraser = document.querySelector("btn-eraser");
 const color = document.querySelector("btn-color");
 
+const sizeSlider = document.querySelector("size-slider");
+const sizeValue = document.querySelector("size-value");
+
 appendRow();
 
 //.units does not exist in DOM until AFTER appendRow() is called.
