@@ -7,7 +7,6 @@ let rainbowMode = false;
 const container = document.querySelector(".container");
 const reset = document.querySelector(".btn-reset");
 const eraser = document.querySelector(".btn-eraser");
-const color = document.querySelector(".btn-color");
 const rainbow = document.querySelector(".btn-rainbow");
 
 const sliderValue = document.querySelector(".size-value");
@@ -34,10 +33,7 @@ eraser.addEventListener('click', () => {
     currentColor = GREEN;
 } );
 
-color.addEventListener('click', () => {
-    rainbowMode = false;
-    currentColor = ORANGE;
-})
+
 
 colorPicker.addEventListener('input', () => {
     rainbowMode = false;
